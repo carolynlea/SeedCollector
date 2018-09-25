@@ -52,13 +52,17 @@ class SeedsController
         }
     }
     
-    func createSeed(seedName: String, seedVariety: String, seedDescription: String, seedImage: Data, sunRequirements: String, plantType: String, context: NSManagedObjectContext)
+    func createSeed(seedName: String, seedVariety: String, seedDescription: String, seedImage: Data, sunRequirements: String, plantType: String,plantingDepth: String, plantSpacing: String, plantHeight: String, plantWidth: String, bestZones: String, waterPreference: String, climatePreference: String, soilPreference: String,  context: NSManagedObjectContext)
     {
-        let _ = Seed(seedName: seedName, seedVariety: seedVariety, seedDescription: seedDescription, seedImage: seedImage, sunRequirements: sunRequirements, plantType: plantType)
+        let _ = Seed(seedName: seedName, seedVariety: seedVariety, seedDescription: seedDescription, seedImage: seedImage, sunRequirements: sunRequirements, plantType: plantType, plantingDepth: plantingDepth, plantSpacing: plantSpacing, plantHeight: plantHeight, plantWidth: plantWidth, bestZones: bestZones, waterPreference: waterPreference, climatePreference: climatePreference, soilPreference: soilPreference)
         saveToCoreData(context: context)
+        if let seed = seed
+        {
+            print(seed)
+        }
     }
     
-    func updateSeed(seed: Seed, seedName: String, seedVariety: String, seedDescription: String, seedImage: Data, sunRequirements: String, plantType: String, timestamp: Date = Date(), context: NSManagedObjectContext)
+    func updateSeed(seed: Seed, seedName: String, seedVariety: String, seedDescription: String, seedImage: Data, sunRequirements: String, plantType: String, plantingDepth: String, plantSpacing: String, plantHeight: String, plantWidth: String, bestZones: String, waterPreference: String, climatePreference: String, soilPreference: String,timestamp: Date = Date(), context: NSManagedObjectContext)
     {
         let seed = seed
         seed.seedName = seedName
@@ -67,8 +71,17 @@ class SeedsController
         seed.seedImage = seedImage
         seed.sunRequirements = sunRequirements
         seed.plantType = plantType
+        seed.plantingDepth = plantingDepth
+        seed.plantSpacing = plantSpacing
+        seed.plantHeight = plantHeight
+        seed.plantWidth = plantWidth
+        seed.bestZones = bestZones
+        seed.waterPreference = waterPreference
+        seed.climatePreference = climatePreference
+        seed.soilPreference = soilPreference
         seed.timestamp = timestamp
         saveToCoreData(context: context)
+        print(seed)
     }
     
     func deleteSeed(seed: Seed, context: NSManagedObjectContext)

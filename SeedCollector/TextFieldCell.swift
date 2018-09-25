@@ -12,11 +12,12 @@ class TextFieldCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSour
 {
     @IBOutlet weak var inputTextField: UITextField!
     
+    @IBOutlet weak var textFieldLabel: UILabel!
     var needsPicker: Bool = false
     let textPicker = UIPickerView()
     var pickerData: [String] = []
-    var typePickerData: [String] = ["", "Annual", "Perennial", "Biennial"]
-    var sunPickerData: [String] = ["", "Full Sun", "Full Shade", "Full Sun/Light Shade", "Dappled Light"]
+    var typePickerData: [String] = ["Annual", "Perennial", "Biennial"]
+    var sunPickerData: [String] = ["Full Sun", "Full Shade", "Full Sun/Part Shade", "Dappled Light", "Add New"]
     
     
     // MARK: - PickerView
@@ -40,7 +41,7 @@ class TextFieldCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSour
     
     //MARK: - TextField
     
-    public func configure(text: String, placeholder: String, needsPicker: Bool)
+    public func configure(text: String, placeholder: String, needsPicker: Bool, labelText: String)
     {
         if needsPicker
         {
@@ -50,6 +51,9 @@ class TextFieldCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSour
         
         inputTextField.text = text
         inputTextField.placeholder = placeholder
+        textFieldLabel.text = labelText
         
     }
+    
+    
 }
