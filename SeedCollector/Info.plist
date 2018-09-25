@@ -34,6 +34,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>Permission needed in order to add the pictures you take with your camera.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Permission needed in order to use photos stored in your lbrary and add them to the app.</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

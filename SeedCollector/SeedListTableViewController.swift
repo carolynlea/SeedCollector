@@ -80,6 +80,7 @@ class SeedListTableViewController: UITableViewController
             {
                 detailView.seed = seedsController.seeds[indexPath.row]
                 detailView.titleLabel.text = seedsController.seeds[indexPath.row].seedName
+                detailView.imageData = seedsController.seeds[indexPath.row].seedImage
             }
         }
     }

@@ -11,12 +11,13 @@ import CoreData
 
 extension Seed
 {
-    convenience init(seedName: String, seedVariety: String, seedDescription: String, timestamp: Date = Date(), context: NSManagedObjectContext = CoreDataStack.shared.mainContext)
+    convenience init(seedName: String, seedVariety: String, seedDescription: String, seedImage: Data, timestamp: Date = Date(), context: NSManagedObjectContext = CoreDataStack.shared.mainContext)
     {
         self.init(context: context)
         self.seedName = seedName
         self.seedVariety = seedVariety
         self.seedDescription = seedDescription
+        self.seedImage = seedImage 
         self.timestamp = timestamp
     }
 }

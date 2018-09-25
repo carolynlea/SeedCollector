@@ -24,11 +24,15 @@ class SeedListTableViewCell: UITableViewCell
     
     private func updateViews()
     {
-        if let seed = seed
+        guard let seed = seed else {return}
+        
+        if seed.seedImage != nil
         {
-            seedImageView.image = UIImage(named: "seedling")
-            seedNameLabel.text = seed.seedName
-            seedVarietyLabel.text = seed.seedVariety
+            seedImageView.image = UIImage(data: seed.seedImage!)
         }
+        
+        seedNameLabel.text = seed.seedName
+        seedVarietyLabel.text = seed.seedVariety
+        
     }
 }

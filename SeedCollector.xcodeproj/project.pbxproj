@@ -13,6 +13,7 @@
 		DE48C0962159529900C91CBE /* SeedsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE48C0952159529900C91CBE /* SeedsController.swift */; };
 		DE48C09821596B7300C91CBE /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE48C09721596B7300C91CBE /* TextFieldCell.swift */; };
 		DE48C09A215999BB00C91CBE /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE48C099215999BB00C91CBE /* ImageCell.swift */; };
+		DE48C09C2159BB4000C91CBE /* PopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE48C09B2159BB4000C91CBE /* PopViewController.swift */; };
 		DE5E51092158792000B27767 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5E51082158792000B27767 /* AppDelegate.swift */; };
 		DE5E510E2158792000B27767 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE5E510C2158792000B27767 /* Main.storyboard */; };
 		DE5E51102158792200B27767 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE5E510F2158792200B27767 /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 		DE48C0952159529900C91CBE /* SeedsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedsController.swift; sourceTree = "<group>"; };
 		DE48C09721596B7300C91CBE /* TextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
 		DE48C099215999BB00C91CBE /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		DE48C09B2159BB4000C91CBE /* PopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopViewController.swift; sourceTree = "<group>"; };
 		DE5E51052158792000B27767 /* SeedCollector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeedCollector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE5E51082158792000B27767 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE5E510D2158792000B27767 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				DE48C0952159529900C91CBE /* SeedsController.swift */,
 				DE5E511A215879EB00B27767 /* SeedListTableViewController.swift */,
 				DE5E511C21587A0300B27767 /* SeedDetailTableViewController.swift */,
+				DE48C09B2159BB4000C91CBE /* PopViewController.swift */,
 				DE5E511E215885F500B27767 /* SeedListTableViewCell.swift */,
 				DE48C099215999BB00C91CBE /* ImageCell.swift */,
 				DE48C09721596B7300C91CBE /* TextFieldCell.swift */,
@@ -161,6 +164,7 @@
 			files = (
 				DE48C0962159529900C91CBE /* SeedsController.swift in Sources */,
 				DE5E511D21587A0300B27767 /* SeedDetailTableViewController.swift in Sources */,
+				DE48C09C2159BB4000C91CBE /* PopViewController.swift in Sources */,
 				DE48C0902159512000C91CBE /* Seeds.xcdatamodeld in Sources */,
 				DE5E511B215879EB00B27767 /* SeedListTableViewController.swift in Sources */,
 				DE48C0922159519900C91CBE /* CoreDataStack.swift in Sources */,
