@@ -14,14 +14,19 @@ class SeedDetailTableViewController: UITableViewController, UITextFieldDelegate,
 {
     var seedsController: SeedsController?
     var seed: Seed?
+    
     let saveView = UIView()
     let titleView = UIView()
     var titleLabel = UILabel()
+    
     var imageCell = ImageCell()
     var textFieldCell = TextFieldCell()
+    
     var nameTextField: UITextField!
     var varietyTextField: UITextField!
     var descriptionTextField: UITextField!
+    var typeTextField: UITextField!
+    var sunTextField: UITextField!
     var imageData: Data?
     
     override func viewWillAppear(_ animated: Bool)
@@ -91,7 +96,7 @@ class SeedDetailTableViewController: UITableViewController, UITextFieldDelegate,
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return 4
+        return 6
     }
 
     
@@ -156,6 +161,34 @@ class SeedDetailTableViewController: UITableViewController, UITextFieldDelegate,
                 textFieldCell.configure(text: "", placeholder: "Seed Description", needsPicker: false)
             }
         }
+        if indexPath.row == 4
+        {
+            typeTextField = textFieldCell.inputTextField
+            textFieldCell.pickerData = textFieldCell.typePickerData
+            
+            if let seed = seed
+            {
+                textFieldCell.configure(text: seed.plantType ?? "", placeholder: "", needsPicker: true)
+            }
+            else
+            {
+                textFieldCell.configure(text: "", placeholder: "Plant Type", needsPicker: true)
+            }
+        }
+        if indexPath.row == 5
+        {
+            sunTextField = textFieldCell.inputTextField
+            textFieldCell.pickerData = textFieldCell.sunPickerData
+            
+            if let seed = seed
+            {
+                textFieldCell.configure(text: seed.sunRequirements ?? "", placeholder: "", needsPicker: true)
+            }
+            else
+            {
+                textFieldCell.configure(text: "", placeholder: "Sun Requirements", needsPicker: true)
+            }
+        }
 
         return textFieldCell
     }
@@ -177,17 +210,19 @@ class SeedDetailTableViewController: UITableViewController, UITextFieldDelegate,
         guard let name = nameTextField.text,
             let variety = varietyTextField.text,
             let description = descriptionTextField.text,
-            let image = imageData else {return}
+            let image = imageData,
+            let sun = sunTextField.text,
+            let type = typeTextField.text else {return}
         
         let backgroundMoc = CoreDataStack.shared.container.newBackgroundContext()
         
         if seed == nil
         {
-            seedsController?.createSeed(seedName: name, seedVariety: variety, seedDescription: description, seedImage: image, context: backgroundMoc)
+            seedsController?.createSeed(seedName: name, seedVariety: variety, seedDescription: description, seedImage: image, sunRequirements: sun, plantType: type, context: backgroundMoc)
         }
         else
         {
-            seedsController?.updateSeed(seed: seed!, seedName: name, seedVariety: variety, seedDescription: description, seedImage: image, context: backgroundMoc)
+            seedsController?.updateSeed(seed: seed!, seedName: name, seedVariety: variety, seedDescription: description, seedImage: image, sunRequirements: sun, plantType: type, context: backgroundMoc)
         }
         print("button tapped")
         navigationController?.popViewController(animated: true)

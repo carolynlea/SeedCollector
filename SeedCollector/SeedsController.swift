@@ -52,19 +52,21 @@ class SeedsController
         }
     }
     
-    func createSeed(seedName: String, seedVariety: String, seedDescription: String, seedImage: Data, context: NSManagedObjectContext)
+    func createSeed(seedName: String, seedVariety: String, seedDescription: String, seedImage: Data, sunRequirements: String, plantType: String, context: NSManagedObjectContext)
     {
-        let _ = Seed(seedName: seedName, seedVariety: seedVariety, seedDescription: seedDescription, seedImage: seedImage)
+        let _ = Seed(seedName: seedName, seedVariety: seedVariety, seedDescription: seedDescription, seedImage: seedImage, sunRequirements: sunRequirements, plantType: plantType)
         saveToCoreData(context: context)
     }
     
-    func updateSeed(seed: Seed, seedName: String, seedVariety: String, seedDescription: String, seedImage: Data, timestamp: Date = Date(), context: NSManagedObjectContext)
+    func updateSeed(seed: Seed, seedName: String, seedVariety: String, seedDescription: String, seedImage: Data, sunRequirements: String, plantType: String, timestamp: Date = Date(), context: NSManagedObjectContext)
     {
         let seed = seed
         seed.seedName = seedName
         seed.seedVariety = seedVariety
         seed.seedDescription = seedDescription
         seed.seedImage = seedImage
+        seed.sunRequirements = sunRequirements
+        seed.plantType = plantType
         seed.timestamp = timestamp
         saveToCoreData(context: context)
     }
