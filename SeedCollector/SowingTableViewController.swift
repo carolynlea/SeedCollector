@@ -31,7 +31,7 @@ class SowingTableViewController: UITableViewController, UITextFieldDelegate
     var heightTextField: UITextField!
     var widthTextField: UITextField!
     
-    
+    let aDate = Calendar.current.date(byAdding: .day, value: 5, to: Date()/*datePicker.date*/)
     
     override func viewWillAppear(_ animated: Bool)
     {
@@ -56,6 +56,51 @@ class SowingTableViewController: UITableViewController, UITextFieldDelegate
         {
             print("First create a seed")
         }
+        var firstDate: Int = 7
+        var daysfromNow: Date {
+            return (Calendar.current as NSCalendar).date(byAdding: .day, value: firstDate, to: Date(), options: [])!
+        }
+        print(daysfromNow)
+        
+        let monthsToAdd = 2
+        let daysToAdd = 1
+        let yearsToAdd = 1
+        let currentDate = getCurrentDate()
+        
+        var dateComponent = DateComponents()
+        
+        dateComponent.month = monthsToAdd
+        dateComponent.day = daysToAdd
+        dateComponent.year = yearsToAdd
+        
+        let futureDate = Calendar.current.date(byAdding: dateComponent, to: currentDate)
+        
+        print(currentDate)
+        print(futureDate!)
+//        print(aDate!)
+        
+    }
+    
+    func daysBetweenDates(startDate: Date, endDate: Date) -> Int {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([Calendar.Component.day], from: startDate, to: endDate)
+        return components.day!
+    }
+    
+    func getCurrentDate()-> Date
+    {
+        var now = Date()
+        var nowComponents = DateComponents()
+        let calendar = Calendar.current
+        nowComponents.year = Calendar.current.component(.year, from: now)
+        nowComponents.month = Calendar.current.component(.month, from: now)
+        nowComponents.day = Calendar.current.component(.day, from: now)
+        nowComponents.hour = Calendar.current.component(.hour, from: now)
+        nowComponents.minute = Calendar.current.component(.minute, from: now)
+        nowComponents.second = Calendar.current.component(.second, from: now)
+        nowComponents.timeZone = NSTimeZone.local
+        now = calendar.date(from: nowComponents)!
+        return now as Date
     }
     
     override func viewWillDisappear(_ animated: Bool)
@@ -114,12 +159,27 @@ class SowingTableViewController: UITableViewController, UITextFieldDelegate
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = seed?.seedName
+        cell.textLabel?.text = ""//seed?.seedName
+        cell.detailTextLabel?.text = aDate?.asString(style: .full)
         return cell
     }
     
     @IBAction func saveSowingInfo(_ sender: Any)
     {
         print("info saved")
+    }
+}
+
+extension Date {
+    func asString(style: DateFormatter.Style) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = style
+        return dateFormatter.string(from: self)
+        
+//        let myDate = Date()
+//        myDate.asString(style: .full)   // Wednesday, January 10, 2018
+//        myDate.asString(style: .long)   // January 10, 2018
+//        myDate.asString(style: .medium) // Jan 10, 2018
+//        myDate.asString(style: .short)  // 1/10/18
     }
 }
