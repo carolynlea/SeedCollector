@@ -25,11 +25,8 @@ class SowingTableViewController: UITableViewController, UITextFieldDelegate
     let titleView = UIView()
     var titleLabel = UILabel()
     
-    var multiTextFieldCell = MultiTextFieldSowingCell()
-    var depthTextField: UITextField!
-    var spacingTextField: UITextField!
-    var heightTextField: UITextField!
-    var widthTextField: UITextField!
+    
+    
     
     let aDate = Calendar.current.date(byAdding: .day, value: 5, to: Date()/*datePicker.date*/)
     
@@ -118,7 +115,7 @@ class SowingTableViewController: UITableViewController, UITextFieldDelegate
         let saveButton = UIButton(type: UIButton.ButtonType.custom) as UIButton
         saveButton.frame = CGRect(x: 0, y: 0, width: 80, height: 81)
         saveButton.setBackgroundImage(UIImage(named:"sunLike"), for: .normal)
-        saveButton.addTarget(self, action: #selector(saveSowingInfo), for:.touchUpInside)
+        saveButton.addTarget(self, action: #selector(addSowingInfo), for:.touchUpInside)
         
         saveView.addSubview(saveButton)
         self.navigationController?.view.addSubview(saveView)
@@ -164,10 +161,12 @@ class SowingTableViewController: UITableViewController, UITextFieldDelegate
         return cell
     }
     
-    @IBAction func saveSowingInfo(_ sender: Any)
+    @IBAction func addSowingInfo(_ sender: Any)
     {
         print("info saved")
     }
+    
+    
 }
 
 extension Date {
