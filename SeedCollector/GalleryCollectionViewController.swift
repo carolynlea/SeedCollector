@@ -10,20 +10,70 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class GalleryCollectionViewController: UICollectionViewController {
+class GalleryCollectionViewController: UICollectionViewController
+{
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+    var titleView = UIView()
+    var titleLabel = UILabel()
+    var seedsController: SeedsController?
+    var seed: Seed?
+    {
+        get
+        {
+            return (self.tabBarController!.viewControllers![0] as! SeedDetailTableViewController).seed
+        }
+        set
+        {
+            (self.tabBarController!.viewControllers![0] as! SeedDetailTableViewController).seed = newValue
+        }
     }
-
+    
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        
+        collectionView.reloadData()
+        
+        print("seed = \(String(describing: seed?.seedName))")
+        
+        titleView.isHidden = false
+        
+    }
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        makeViews()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool)
+    {
+        super.viewDidAppear(true)
+        
+        titleView.isHidden = true
+    }
+    
+    func makeViews()
+    {
+        titleView.frame = CGRect(x: 0, y: 85, width: 250, height: 60)
+        
+        titleLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 230, height: 50))
+        titleLabel.font = UIFont(name: "Baskerville-Bold", size: 40)
+        titleLabel.textColor = UIColor.white
+        if seed?.seedName != nil
+        {
+            titleLabel.text = seed?.seedName
+        }
+        else
+        {
+            titleLabel.text = "Add New Seed"
+        }
+        
+        titleLabel.adjustsFontSizeToFitWidth = true
+        titleView.addSubview(titleLabel)
+        
+        self.navigationController?.view.addSubview(titleView)
+    }
     /*
     // MARK: - Navigation
 
@@ -36,19 +86,20 @@ class GalleryCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    override func numberOfSections(in collectionView: UICollectionView) -> Int
+    {
+        return 1
     }
 
 
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    {
+        return 5
     }
 
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GalleryCell", for: indexPath)
     
         // Configure the cell
     

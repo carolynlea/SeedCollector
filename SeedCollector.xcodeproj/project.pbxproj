@@ -34,6 +34,26 @@
 		DE65512E215BF039002B4E18 /* RecordsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE65512D215BF039002B4E18 /* RecordsTableViewController.swift */; };
 		DE655130215BF073002B4E18 /* RecordsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE65512F215BF073002B4E18 /* RecordsCell.swift */; };
 		DE655132215BF422002B4E18 /* GrowingCyclesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE655131215BF422002B4E18 /* GrowingCyclesTableViewController.swift */; };
+		DE655136215C2035002B4E18 /* ThreeTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE655135215C2035002B4E18 /* ThreeTextFieldCell.swift */; };
+		DE655138215C204D002B4E18 /* TwoTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE655137215C204D002B4E18 /* TwoTextFieldCell.swift */; };
+		DE65513A215C3ABE002B4E18 /* CheckboxCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE655139215C3ABE002B4E18 /* CheckboxCell.swift */; };
+		DE65513C215C3C97002B4E18 /* ChartCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE65513B215C3C97002B4E18 /* ChartCollectionViewCell.swift */; };
+		DE65513E215C3F33002B4E18 /* ManyItemsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE65513D215C3F33002B4E18 /* ManyItemsCell.swift */; };
+		DE655140215C3F75002B4E18 /* MediumItemsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE65513F215C3F75002B4E18 /* MediumItemsCell.swift */; };
+		DE655142215C3FAF002B4E18 /* SmallItemsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE655141215C3FAF002B4E18 /* SmallItemsCell.swift */; };
+		DE655144215C3FF3002B4E18 /* FiveItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE655143215C3FF3002B4E18 /* FiveItemCell.swift */; };
+		DE655146215C4018002B4E18 /* GerminationNotesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE655145215C4018002B4E18 /* GerminationNotesCell.swift */; };
+		DE655148215C41AA002B4E18 /* GrowingNotesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE655147215C41AA002B4E18 /* GrowingNotesCell.swift */; };
+		DE65514A215C42EA002B4E18 /* GrowingCalculationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE655149215C42EA002B4E18 /* GrowingCalculationCell.swift */; };
+		DE65514C215C4523002B4E18 /* SingleRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE65514B215C4523002B4E18 /* SingleRowCell.swift */; };
+		DE65514E215C4580002B4E18 /* DoubleRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE65514D215C4580002B4E18 /* DoubleRowCell.swift */; };
+		DE655150215C46DE002B4E18 /* GardenLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE65514F215C46DE002B4E18 /* GardenLocationCell.swift */; };
+		DEEC59DF215CFC880052A29F /* SowingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEC59DE215CFC880052A29F /* SowingController.swift */; };
+		DEEC59E1215CFCC30052A29F /* SowingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEC59E0215CFCC30052A29F /* SowingData.swift */; };
+		DEEC59E3215D4BD10052A29F /* WeatherGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEC59E2215D4BD10052A29F /* WeatherGetter.swift */; };
+		DEEC59E5215D586C0052A29F /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEC59E4215D586C0052A29F /* Weather.swift */; };
+		DEEC59E7215D6FA80052A29F /* HardeningTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEC59E6215D6FA80052A29F /* HardeningTableViewCell.swift */; };
+		DEEC59E9215D70500052A29F /* HarvestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEC59E8215D70500052A29F /* HarvestTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +86,26 @@
 		DE65512D215BF039002B4E18 /* RecordsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsTableViewController.swift; sourceTree = "<group>"; };
 		DE65512F215BF073002B4E18 /* RecordsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsCell.swift; sourceTree = "<group>"; };
 		DE655131215BF422002B4E18 /* GrowingCyclesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowingCyclesTableViewController.swift; sourceTree = "<group>"; };
+		DE655135215C2035002B4E18 /* ThreeTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeTextFieldCell.swift; sourceTree = "<group>"; };
+		DE655137215C204D002B4E18 /* TwoTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoTextFieldCell.swift; sourceTree = "<group>"; };
+		DE655139215C3ABE002B4E18 /* CheckboxCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxCell.swift; sourceTree = "<group>"; };
+		DE65513B215C3C97002B4E18 /* ChartCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCollectionViewCell.swift; sourceTree = "<group>"; };
+		DE65513D215C3F33002B4E18 /* ManyItemsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManyItemsCell.swift; sourceTree = "<group>"; };
+		DE65513F215C3F75002B4E18 /* MediumItemsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumItemsCell.swift; sourceTree = "<group>"; };
+		DE655141215C3FAF002B4E18 /* SmallItemsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallItemsCell.swift; sourceTree = "<group>"; };
+		DE655143215C3FF3002B4E18 /* FiveItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveItemCell.swift; sourceTree = "<group>"; };
+		DE655145215C4018002B4E18 /* GerminationNotesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GerminationNotesCell.swift; sourceTree = "<group>"; };
+		DE655147215C41AA002B4E18 /* GrowingNotesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowingNotesCell.swift; sourceTree = "<group>"; };
+		DE655149215C42EA002B4E18 /* GrowingCalculationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowingCalculationCell.swift; sourceTree = "<group>"; };
+		DE65514B215C4523002B4E18 /* SingleRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleRowCell.swift; sourceTree = "<group>"; };
+		DE65514D215C4580002B4E18 /* DoubleRowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleRowCell.swift; sourceTree = "<group>"; };
+		DE65514F215C46DE002B4E18 /* GardenLocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenLocationCell.swift; sourceTree = "<group>"; };
+		DEEC59DE215CFC880052A29F /* SowingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SowingController.swift; sourceTree = "<group>"; };
+		DEEC59E0215CFCC30052A29F /* SowingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SowingData.swift; sourceTree = "<group>"; };
+		DEEC59E2215D4BD10052A29F /* WeatherGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherGetter.swift; sourceTree = "<group>"; };
+		DEEC59E4215D586C0052A29F /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		DEEC59E6215D6FA80052A29F /* HardeningTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardeningTableViewCell.swift; sourceTree = "<group>"; };
+		DEEC59E8215D70500052A29F /* HarvestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarvestTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,18 +139,22 @@
 			isa = PBXGroup;
 			children = (
 				DE5E51082158792000B27767 /* AppDelegate.swift */,
+				DEEC59E4215D586C0052A29F /* Weather.swift */,
+				DEEC59E2215D4BD10052A29F /* WeatherGetter.swift */,
 				DE48C08E2159512000C91CBE /* Seeds.xcdatamodeld */,
 				DE48C0912159519900C91CBE /* CoreDataStack.swift */,
 				DE48C093215951D100C91CBE /* Seed+Convenience.swift */,
 				DE48C0952159529900C91CBE /* SeedsController.swift */,
+				DEEC59E0215CFCC30052A29F /* SowingData.swift */,
+				DEEC59DE215CFC880052A29F /* SowingController.swift */,
 				DE5E511A215879EB00B27767 /* SeedListTableViewController.swift */,
 				DE5E511C21587A0300B27767 /* SeedDetailTableViewController.swift */,
+				DE48C0A1215ABC9E00C91CBE /* SowingTableViewController.swift */,
+				DE655121215BDF12002B4E18 /* GrowingTableViewController.swift */,
+				DE65512D215BF039002B4E18 /* RecordsTableViewController.swift */,
+				DE655123215BDF32002B4E18 /* GalleryCollectionViewController.swift */,
 				DE65512B215BEFD2002B4E18 /* CyclesTableViewController.swift */,
 				DE655131215BF422002B4E18 /* GrowingCyclesTableViewController.swift */,
-				DE48C0A1215ABC9E00C91CBE /* SowingTableViewController.swift */,
-				DE65512D215BF039002B4E18 /* RecordsTableViewController.swift */,
-				DE655121215BDF12002B4E18 /* GrowingTableViewController.swift */,
-				DE655123215BDF32002B4E18 /* GalleryCollectionViewController.swift */,
 				DE48C09B2159BB4000C91CBE /* PopViewController.swift */,
 				DE5E511E215885F500B27767 /* SeedListTableViewCell.swift */,
 				DE655125215BE6B9002B4E18 /* GalleryCollectionViewCell.swift */,
@@ -119,9 +163,25 @@
 				DE655129215BE6F7002B4E18 /* GrowingTableViewCell.swift */,
 				DE48C099215999BB00C91CBE /* ImageCell.swift */,
 				DE48C09721596B7300C91CBE /* TextFieldCell.swift */,
+				DE655135215C2035002B4E18 /* ThreeTextFieldCell.swift */,
+				DE655137215C204D002B4E18 /* TwoTextFieldCell.swift */,
 				DE48C09F215A834700C91CBE /* MultiTextFieldCell.swift */,
 				DE48C0A3215AC94B00C91CBE /* MultiTextFieldSowingCell.swift */,
 				DE48C09D2159C5D800C91CBE /* TextViewCell.swift */,
+				DE655139215C3ABE002B4E18 /* CheckboxCell.swift */,
+				DE65513B215C3C97002B4E18 /* ChartCollectionViewCell.swift */,
+				DE65513D215C3F33002B4E18 /* ManyItemsCell.swift */,
+				DE65513F215C3F75002B4E18 /* MediumItemsCell.swift */,
+				DE655141215C3FAF002B4E18 /* SmallItemsCell.swift */,
+				DE655143215C3FF3002B4E18 /* FiveItemCell.swift */,
+				DE655145215C4018002B4E18 /* GerminationNotesCell.swift */,
+				DE655149215C42EA002B4E18 /* GrowingCalculationCell.swift */,
+				DE65514B215C4523002B4E18 /* SingleRowCell.swift */,
+				DE65514D215C4580002B4E18 /* DoubleRowCell.swift */,
+				DEEC59E6215D6FA80052A29F /* HardeningTableViewCell.swift */,
+				DEEC59E8215D70500052A29F /* HarvestTableViewCell.swift */,
+				DE65514F215C46DE002B4E18 /* GardenLocationCell.swift */,
+				DE655147215C41AA002B4E18 /* GrowingNotesCell.swift */,
 				DE5E510C2158792000B27767 /* Main.storyboard */,
 				DE5E510F2158792200B27767 /* Assets.xcassets */,
 				DE5E51112158792200B27767 /* LaunchScreen.storyboard */,
@@ -201,30 +261,50 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEEC59DF215CFC880052A29F /* SowingController.swift in Sources */,
 				DE655132215BF422002B4E18 /* GrowingCyclesTableViewController.swift in Sources */,
 				DE48C0962159529900C91CBE /* SeedsController.swift in Sources */,
 				DE65512C215BEFD2002B4E18 /* CyclesTableViewController.swift in Sources */,
+				DEEC59E1215CFCC30052A29F /* SowingData.swift in Sources */,
 				DE65512A215BE6F7002B4E18 /* GrowingTableViewCell.swift in Sources */,
 				DE48C0A4215AC94B00C91CBE /* MultiTextFieldSowingCell.swift in Sources */,
 				DE5E511D21587A0300B27767 /* SeedDetailTableViewController.swift in Sources */,
+				DE655144215C3FF3002B4E18 /* FiveItemCell.swift in Sources */,
+				DE655142215C3FAF002B4E18 /* SmallItemsCell.swift in Sources */,
 				DE48C09C2159BB4000C91CBE /* PopViewController.swift in Sources */,
 				DE655130215BF073002B4E18 /* RecordsCell.swift in Sources */,
+				DE65514A215C42EA002B4E18 /* GrowingCalculationCell.swift in Sources */,
 				DE48C0902159512000C91CBE /* Seeds.xcdatamodeld in Sources */,
+				DE65514C215C4523002B4E18 /* SingleRowCell.swift in Sources */,
 				DE655124215BDF32002B4E18 /* GalleryCollectionViewController.swift in Sources */,
 				DE65512E215BF039002B4E18 /* RecordsTableViewController.swift in Sources */,
 				DE5E511B215879EB00B27767 /* SeedListTableViewController.swift in Sources */,
 				DE655126215BE6B9002B4E18 /* GalleryCollectionViewCell.swift in Sources */,
+				DE65513E215C3F33002B4E18 /* ManyItemsCell.swift in Sources */,
 				DE48C0922159519900C91CBE /* CoreDataStack.swift in Sources */,
+				DEEC59E9215D70500052A29F /* HarvestTableViewCell.swift in Sources */,
 				DE655128215BE6DD002B4E18 /* SowedTableViewCell.swift in Sources */,
+				DE655138215C204D002B4E18 /* TwoTextFieldCell.swift in Sources */,
 				DE48C0A2215ABC9E00C91CBE /* SowingTableViewController.swift in Sources */,
+				DEEC59E3215D4BD10052A29F /* WeatherGetter.swift in Sources */,
 				DE48C09821596B7300C91CBE /* TextFieldCell.swift in Sources */,
 				DE48C094215951D100C91CBE /* Seed+Convenience.swift in Sources */,
 				DE5E511F215885F500B27767 /* SeedListTableViewCell.swift in Sources */,
+				DE65514E215C4580002B4E18 /* DoubleRowCell.swift in Sources */,
+				DEEC59E7215D6FA80052A29F /* HardeningTableViewCell.swift in Sources */,
+				DE655136215C2035002B4E18 /* ThreeTextFieldCell.swift in Sources */,
+				DE65513C215C3C97002B4E18 /* ChartCollectionViewCell.swift in Sources */,
 				DE48C0A0215A834700C91CBE /* MultiTextFieldCell.swift in Sources */,
 				DE48C09E2159C5D800C91CBE /* TextViewCell.swift in Sources */,
 				DE5E51092158792000B27767 /* AppDelegate.swift in Sources */,
+				DEEC59E5215D586C0052A29F /* Weather.swift in Sources */,
+				DE655146215C4018002B4E18 /* GerminationNotesCell.swift in Sources */,
 				DE655122215BDF12002B4E18 /* GrowingTableViewController.swift in Sources */,
+				DE655140215C3F75002B4E18 /* MediumItemsCell.swift in Sources */,
 				DE48C09A215999BB00C91CBE /* ImageCell.swift in Sources */,
+				DE655150215C46DE002B4E18 /* GardenLocationCell.swift in Sources */,
+				DE65513A215C3ABE002B4E18 /* CheckboxCell.swift in Sources */,
+				DE655148215C41AA002B4E18 /* GrowingNotesCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

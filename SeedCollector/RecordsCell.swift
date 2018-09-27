@@ -10,6 +10,7 @@ import UIKit
 
 class RecordsCell: UITableViewCell
 {
+    @IBOutlet weak var cycleNameTextField: UILabel!
     @IBOutlet weak var sowedNumberLabel: UILabel!
     @IBOutlet weak var sproutedNumberLabel: UILabel!
     @IBOutlet weak var plantedNumberLabel: UILabel!
@@ -20,4 +21,5 @@ class RecordsCell: UITableViewCell
     @IBOutlet weak var plantedMonthLabel: UILabel!
     @IBOutlet weak var harvestedMonthLabel: UILabel!
 
+    @IBOutlet weak var chartCollectionView: UICollectionView!
 }

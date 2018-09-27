@@ -8,39 +8,93 @@
 
 import UIKit
 
-class RecordsTableViewController: UITableViewController {
-
-    override func viewDidLoad() {
+class RecordsTableViewController: UITableViewController
+{
+    var titleView = UIView()
+    var titleLabel = UILabel()
+    var seedsController: SeedsController?
+    var seed: Seed?
+    {
+        get
+        {
+            return (self.tabBarController!.viewControllers![0] as! SeedDetailTableViewController).seed
+        }
+        set
+        {
+            (self.tabBarController!.viewControllers![0] as! SeedDetailTableViewController).seed = newValue
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
+        
+        print("seed = \(String(describing: seed?.seedName))")
+        
+        titleView.isHidden = false
+        
+    }
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        makeViews()
+        
     }
 
+    override func viewWillDisappear(_ animated: Bool)
+    {
+        super.viewDidAppear(true)
+        
+        titleView.isHidden = true
+    }
+    
+    func makeViews()
+    {
+        titleView.frame = CGRect(x: 0, y: 85, width: 250, height: 60)
+        
+        titleLabel = UILabel(frame: CGRect(x: 10, y: 0, width: 230, height: 50))
+        titleLabel.font = UIFont(name: "Baskerville-Bold", size: 40)
+        titleLabel.textColor = UIColor.white
+        if seed?.seedName != nil
+        {
+            titleLabel.text = seed?.seedName
+        }
+        else
+        {
+            titleLabel.text = "Add New Seed"
+        }
+        
+        titleLabel.adjustsFontSizeToFitWidth = true
+        titleView.addSubview(titleLabel)
+        
+        self.navigationController?.view.addSubview(titleView)
+    }
+    
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    override func numberOfSections(in tableView: UITableView) -> Int
+    {
+        return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return 1
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RecordsCell", for: indexPath) as! RecordsCell
 
-        // Configure the cell...
+        
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

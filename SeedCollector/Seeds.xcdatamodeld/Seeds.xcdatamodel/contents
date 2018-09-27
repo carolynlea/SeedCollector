@@ -2,12 +2,32 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14315.18" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Seed" representedClassName="Seed" syncable="YES" codeGenerationType="class">
         <attribute name="bestZones" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="climatePreference" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isASeed" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isBulb" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isContainerFriendly" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isDroughtTolerant" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isHeavyFeeder" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isHeirloom" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isHybrid" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isRhizome" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isSelfSeeding" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isTuber" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="latinName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="numberOfPackages" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="packageSize" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="plantHeight" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="plantingDepth" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="plantSpacing" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="plantType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="plantWidth" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="purchaseByDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="purchaseDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="purchasedFrom" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="purchasePrice" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="seedBrand" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="seedDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="seedImage" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <attribute name="seedName" optional="YES" attributeType="String" syncable="YES"/>
@@ -18,6 +38,6 @@
         <attribute name="waterPreference" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Seed" positionX="-63" positionY="-18" width="128" height="270"/>
+        <element name="Seed" positionX="-63" positionY="-18" width="128" height="570"/>
     </elements>
 </model>

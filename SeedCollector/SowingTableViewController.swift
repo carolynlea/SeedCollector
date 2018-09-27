@@ -8,25 +8,31 @@
 
 import UIKit
 
-class SowingTableViewController: UITableViewController, UITextFieldDelegate
+class SowingTableViewController: UITableViewController, UITextFieldDelegate, UIPickerViewDelegate
 {
     var seedsController: SeedsController?
     var seed: Seed?
     {
-        get {
+        get
+        {
             return (self.tabBarController!.viewControllers![0] as! SeedDetailTableViewController).seed
         }
-        set {
+        set
+        {
             (self.tabBarController!.viewControllers![0] as! SeedDetailTableViewController).seed = newValue
         }
     }
-    
+    var sowingController: SowingController?
+    var sowingData: SowingData?
     let saveView = UIView()
     let titleView = UIView()
     var titleLabel = UILabel()
-    
-    
-    
+    let datePicker: UIDatePicker = UIDatePicker()
+    var manyItemsCell = ManyItemsCell()
+    var mediumItemsCell = MediumItemsCell()
+    var smallItemsCell = SmallItemsCell()
+    var fiveItemCell = FiveItemCell()
+    var germinationNotesCell = GerminationNotesCell()
     
     let aDate = Calendar.current.date(byAdding: .day, value: 5, to: Date()/*datePicker.date*/)
     
@@ -46,7 +52,7 @@ class SowingTableViewController: UITableViewController, UITextFieldDelegate
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
+        sowingController?.loadFromPersistentStore()
         makeViews()
         
         if seed == nil
@@ -76,6 +82,20 @@ class SowingTableViewController: UITableViewController, UITextFieldDelegate
         print(futureDate!)
 //        print(aDate!)
         
+        let weather = WeatherGetter()
+        weather.getWeather(city: "Boise")
+        //self.view.addSubview(datePicker)
+    }
+    
+    @IBAction func getTemps(_ sender: Any)
+    {
+    }
+    override func viewWillDisappear(_ animated: Bool)
+    {
+        
+        
+        saveView.isHidden = true
+        titleView.isHidden = true
     }
     
     func daysBetweenDates(startDate: Date, endDate: Date) -> Int {
@@ -100,22 +120,14 @@ class SowingTableViewController: UITableViewController, UITextFieldDelegate
         return now as Date
     }
     
-    override func viewWillDisappear(_ animated: Bool)
-    {
-        super.viewDidAppear(true)
-        
-        saveView.isHidden = true
-        titleView.isHidden = true
-    }
-    
     func makeViews()
     {
         saveView.frame = CGRect(x: view.bounds.size.width - 95, y: 48, width: 90, height: 91)
         
         let saveButton = UIButton(type: UIButton.ButtonType.custom) as UIButton
         saveButton.frame = CGRect(x: 0, y: 0, width: 80, height: 81)
-        saveButton.setBackgroundImage(UIImage(named:"sunLike"), for: .normal)
-        saveButton.addTarget(self, action: #selector(addSowingInfo), for:.touchUpInside)
+        saveButton.setBackgroundImage(UIImage(named:"saveFlower"), for: .normal)
+        saveButton.addTarget(self, action: #selector(saveInfo), for:.touchUpInside)
         
         saveView.addSubview(saveButton)
         self.navigationController?.view.addSubview(saveView)
@@ -139,7 +151,11 @@ class SowingTableViewController: UITableViewController, UITextFieldDelegate
         
         self.navigationController?.view.addSubview(titleView)
     }
-
+    @IBAction func calculateDate(_ sender: Any)
+    {
+        mediumItemsCell.getInt()
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int
@@ -149,24 +165,113 @@ class SowingTableViewController: UITableViewController, UITextFieldDelegate
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return 1
+        return 5
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = ""//seed?.seedName
-        cell.detailTextLabel?.text = aDate?.asString(style: .full)
-        return cell
+        if indexPath.row == 0
+        {
+            manyItemsCell = tableView.dequeueReusableCell(withIdentifier: "ManyItemsCell", for: indexPath) as! ManyItemsCell
+            
+            manyItemsCell.sowingData = sowingData
+            
+            return manyItemsCell
+        }
+        if indexPath.row == 1
+        {
+            mediumItemsCell = tableView.dequeueReusableCell(withIdentifier: "MediumItemsCell", for: indexPath) as! MediumItemsCell
+            return mediumItemsCell
+        }
+        if indexPath.row == 2
+        {
+            smallItemsCell = tableView.dequeueReusableCell(withIdentifier: "SmallItemsCell", for: indexPath) as! SmallItemsCell
+            return smallItemsCell
+        }
+        if indexPath.row == 3
+        {
+            fiveItemCell = tableView.dequeueReusableCell(withIdentifier: "FiveItemCell", for: indexPath) as! FiveItemCell
+            return fiveItemCell
+        }
+        else
+        {
+            germinationNotesCell = tableView.dequeueReusableCell(withIdentifier: "GerminationNotesCell", for: indexPath) as! GerminationNotesCell
+            return germinationNotesCell
+        }
+        
     }
     
-    @IBAction func addSowingInfo(_ sender: Any)
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        print("info saved")
+        if indexPath.row == 0
+        {
+            return 201
+        }
+        if indexPath.row == 1
+        {
+            return 188
+        }
+        if indexPath.row == 2
+        {
+            return 51
+        }
+        if indexPath.row == 3
+        {
+            return 92
+        }
+        else 
+        {
+            return 227
+        }
+    }
+    @IBAction func saveInfo(_ sender: Any)
+    {
+       
+        print("sowing info saved")
     }
     
+    func createDatePicker()
+    {
+        
+//        datePicker.frame = CGRect(x:0, y: view.frame.height - view.frame.height + 200, width: self.view.frame.width, height: 200)
+//        datePicker.datePickerMode = .date
+//        datePicker.timeZone = NSTimeZone.local
+//        datePicker.backgroundColor = UIColor.white
+//        datePicker.addTarget(self, action: #selector(datePickerValueChanged(_:)), for: .valueChanged)
+//        self.view.addSubview(datePicker)
+    }
     
+    @objc func datePickerValueChanged(_ sender: UIDatePicker)
+    {
+        let dateFormatter: DateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy hh:mm"
+        let selectedDate: String = dateFormatter.string(from: sender.date)
+        
+        manyItemsCell.sowingDateTextField.text = selectedDate
+        print("selected value \(selectedDate)")
+    }
+    
+    // MARK: - Textfield delegates
+    
+    func textFieldDidBeginEditing(_ textField: UITextField)
+    {
+        textField.layer.borderColor = UIColor(red: 254.0/255.0, green: 101.0/255.0, blue: 129.0/255.0, alpha: 1.0).cgColor
+        textField.layer.cornerRadius = 5
+        textField.borderStyle = .roundedRect
+        textField.layer.borderWidth = 1.0
+        manyItemsCell.sowingDateTextField.inputView = datePicker
+        
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField)
+    {
+        textField.layer.borderColor = UIColor(red: 186.0/255.0, green: 186.0/255.0, blue: 186.0/255.0, alpha: 0.6).cgColor
+        textField.layer.cornerRadius = 5
+        textField.layer.borderWidth = 0.5
+        
+        manyItemsCell.sowingDateTextField.resignFirstResponder()
+    }
 }
 
 extension Date {

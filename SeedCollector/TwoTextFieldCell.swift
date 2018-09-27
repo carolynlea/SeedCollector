@@ -1,18 +1,20 @@
 //
-//  TextFieldCell.swift
-//  SavingSeeds
+//  TwoTextFieldCell.swift
+//  SeedCollector
 //
-//  Created by Carolyn Lea on 9/14/18.
+//  Created by Carolyn Lea on 9/26/18.
 //  Copyright © 2018 Carolyn Lea. All rights reserved.
 //
 
 import UIKit
 
-class TextFieldCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource
+class TwoTextFieldCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSource
 {
-    @IBOutlet weak var inputTextField: UITextField!
+    @IBOutlet weak var labelOne: UILabel!
+    @IBOutlet weak var labelTwo: UILabel!
     
-    @IBOutlet weak var textFieldLabel: UILabel!
+    @IBOutlet weak var textFieldOne: UITextField!
+    @IBOutlet weak var textFieldTwo: UITextField!
     
     var needsPicker: Bool = false
     let textPicker = UIPickerView()
@@ -20,6 +22,19 @@ class TextFieldCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSour
     var typePickerData: [String] = ["Annual", "Perennial", "Biennial"]
     var sunPickerData: [String] = ["Full Sun", "Full Shade", "Full Sun/Part Shade", "Dappled Light", "Add New"]
     
+    public func configureOne(text: String, placeholder: String, labelText: String, needsPicker: Bool)
+    {
+        textFieldOne.text = text
+        textFieldOne.placeholder = placeholder
+        labelOne.text = labelText
+    }
+    
+    public func configureTwo(text: String, placeholder: String, labelText: String, needsPicker: Bool)
+    {
+        textFieldTwo.text = text
+        textFieldTwo.placeholder = placeholder
+        labelTwo.text = labelText
+    }
     
     // MARK: - PickerView
     
@@ -37,24 +52,8 @@ class TextFieldCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataSour
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        inputTextField.text = pickerData[row]
+        textFieldOne.text = pickerData[row]
+        textFieldTwo.text = pickerData[row]
     }
-    
-    //MARK: - TextField
-    
-    public func configure(text: String, placeholder: String, needsPicker: Bool, labelText: String)
-    {
-        if needsPicker
-        {
-            textPicker.delegate = self
-            inputTextField.inputView = textPicker
-        }
-        
-        inputTextField.text = text
-        inputTextField.placeholder = placeholder
-        textFieldLabel.text = labelText
-        
-    }
-    
     
 }

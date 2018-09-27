@@ -83,6 +83,10 @@ class SeedListTableViewController: UITableViewController
                 detailView.imageData = seedsController.seeds[indexPath.row].seedImage
             }
         }
+        else if segue.identifier == "ShowTrackView"
+        {
+            
+        }
     }
     
 
@@ -96,5 +100,5 @@ class SeedListTableViewController: UITableViewController
      let navController = tabbarController.viewControllers?.first as? UINavigationController
      let detailView = navController?.viewControllers.first as? SeedDetailTableViewController
      let detailView = segue.destination as! SeedDetailTableViewController
- 
+ https://www.thespruce.com/corms-different-from-bulbs-tubers-and-rhizomes-2131032
  */
